@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detection Results</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f8ff;
+        }
+        .container {
+            max-width: 800px;
+            margin-top: 50px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #3498db;
+        }
+        .detected-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mb-4">Object Detection Results</h1>
+        <div class="text-center mb-4">
+            <img src="{{ url_for('uploaded_file', filename=filename) }}" alt="Detected Objects" class="detected-image">
+        </div>
+        <h2 class="mb-3">Detected Objects:</h2>
+        <ul class="list-group mb-4">
+            {% for object in detected_objects %}
+                <li class="list-group-item">{{ object }}</li>
+            {% endfor %}
+        </ul>
+        <a href="{{ url_for('upload_image') }}" class="btn btn-primary w-100">Upload Another Image</a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -15,7 +15,7 @@ if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
 
 # Load YOLO model
-model = YOLO(r"yolov10x.pt")
+model = YOLO(r"yolov10n.pt")
 
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):

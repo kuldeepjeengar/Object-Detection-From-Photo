@@ -7,7 +7,7 @@ import cv2
 app = Flask(__name__)
 
 # Configure upload folder
-UPLOAD_FOLDER = r'C:\Users\kulde\Downloads\projects\excelr_kd\computer vision project\photos'
+UPLOAD_FOLDER = 'photos'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # Ensure the upload folder exists
@@ -15,7 +15,7 @@ if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
 
 # Load YOLO model
-model = YOLO(r"C:\Users\kulde\Downloads\projects\excelr_kd\computer vision project\yolov10x.pt")
+model = YOLO("yolov10x.pt")
 
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):

@@ -1,4 +1,3 @@
-python==3.11
 asttokens==2.4.1
 blinker==1.8.2
 certifi==2024.7.4
@@ -48,7 +47,6 @@ Pygments==2.18.0
 pyparsing==3.1.2
 python-dateutil==2.9.0.post0
 pytz==2024.1
-pywin32==306
 PyYAML==6.0.1
 pyzmq==26.0.3
 requests==2.32.3
